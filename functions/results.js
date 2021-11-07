@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const height = requestBody.height;
   const width = requestBody.width;
-
+console.log(process.env)
   const browser = await puppeteer.launch({
     executablePath: process.env.CHROME_PATH,
     headless: true,
