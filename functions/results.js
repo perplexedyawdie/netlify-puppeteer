@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const height = requestBody.height;
   const width = requestBody.width;
-  console.log(`Starting directory: ${process.cwd()}`);
+  console.log(`Envs: ${process.env}`);
   try {
     process.chdir('../../../');
     process.chdir('/opt/build/repo/node_modules/chromium/lib/chromium/chrome-linux/');
