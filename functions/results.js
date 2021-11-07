@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
   const width = requestBody.width;
   console.log(chromium.args)
   const browser = await chromium.puppeteer.launch({
-    args: [...chromium.args,
+    args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-infobars',
