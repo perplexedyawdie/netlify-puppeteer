@@ -352,11 +352,6 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-netlify-plugin-chromium@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/netlify-plugin-chromium/-/netlify-plugin-chromium-1.1.4.tgz#d0a04ef2fbd677a19f3be94ccf47c320d2c3c334"
-  integrity sha512-yLgw6YePOF38URWVsHg3nBBoVSKcbMabKxziJX5i01/weyXWtFQVFvDWSOhyWkQgoMJ6zwF2UznA0Icy+m4pow==
-
 node-fetch@2.6.5:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.5.tgz#42735537d7f080a7e5f78b6c549b7146be1742fd"
