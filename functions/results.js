@@ -1,4 +1,4 @@
-import { chdir, cwd } from 'process';
+
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const puppeteer = require('puppeteer-extra');
 // const puppeteer = addExtra(chromium.puppeteer);
@@ -7,10 +7,10 @@ exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const height = requestBody.height;
   const width = requestBody.width;
-  console.log(`Starting directory: ${cwd()}`);
+  console.log(`Starting directory: ${process.cwd()}`);
   try {
-    chdir('../../../');
-    console.log(`New directory: ${cwd()}`);
+    process.chdir('../../../');
+    console.log(`New directory: ${process.cwd()}`);
   } catch (err) {
     console.error(`chdir: ${err}`);
   }
