@@ -2,7 +2,7 @@
 // const { addExtra } = require('puppeteer-extra');
 // // const puppCore = require('puppeteer-core');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
 // const puppeteer = addExtra(chromium.puppeteer);
 puppeteer.use(StealthPlugin());
 exports.handler = async function (event, context) {
