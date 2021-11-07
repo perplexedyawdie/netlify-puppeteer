@@ -1,6 +1,4 @@
-// const chromium = require('chrome-aws-lambda');
-// const { addExtra } = require('puppeteer-extra');
-// // const puppCore = require('puppeteer-core');
+import { chdir, cwd } from 'process';
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const puppeteer = require('puppeteer-extra');
 // const puppeteer = addExtra(chromium.puppeteer);
@@ -9,8 +7,13 @@ exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const height = requestBody.height;
   const width = requestBody.width;
-console.log(__dirname)
-console.log(process.cwd())
+  console.log(`Starting directory: ${cwd()}`);
+  try {
+    chdir('../../../');
+    console.log(`New directory: ${cwd()}`);
+  } catch (err) {
+    console.error(`chdir: ${err}`);
+  }
   const browser = await puppeteer.launch({
     executablePath: "/opt/build/repo/node_modules/chromium/lib/chromium/chrome-linux/chrome",
     headless: true,
