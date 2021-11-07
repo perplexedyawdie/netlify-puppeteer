@@ -9,8 +9,10 @@
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "puppeteer-core": "^11.0.0",
+  },
+  "devDependencies": {
+    "netlify-plugin-chromium": "^1.1.4",
+    "puppeteer": "^11.0.0",
     "puppeteer-extra": "^3.2.3",
     "puppeteer-extra-plugin-stealth": "^2.9.0"
   }
