@@ -1,8 +1,8 @@
 const chromium = require('chrome-aws-lambda');
 const { addExtra } = require('puppeteer-extra');
-const puppCore = require('puppeteer-core');
+// const puppCore = require('puppeteer-core');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
-const puppeteer = addExtra(puppCore);
+const puppeteer = addExtra(chromium.puppeteer);
 puppeteer.use(StealthPlugin());
 exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
