@@ -490,24 +490,6 @@ puppeteer-extra@^3.2.3:
     debug "^4.1.1"
     deepmerge "^4.2.2"
 
-puppeteer@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-11.0.0.tgz#0808719c38e15315ecc1b1c28911f1c9054d201f"
-  integrity sha512-6rPFqN1ABjn4shgOICGDBITTRV09EjXVqhDERBDKwCLz0UyBxeeBH6Ay0vQUJ84VACmlxwzOIzVEJXThcF3aNg==
-  dependencies:
-    debug "4.3.2"
-    devtools-protocol "0.0.901419"
-    extract-zip "2.0.1"
-    https-proxy-agent "5.0.0"
-    node-fetch "2.6.5"
-    pkg-dir "4.2.0"
-    progress "2.0.3"
-    proxy-from-env "1.1.0"
-    rimraf "3.0.2"
-    tar-fs "2.1.1"
-    unbzip2-stream "1.4.3"
-    ws "8.2.3"
-
 readable-stream@^3.1.1, readable-stream@^3.4.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.0.tgz#337bbda3adc0706bd3e024426a286d4b4b2c9198"
