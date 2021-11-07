@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
   const width = requestBody.width;
   console.log(`Starting directory: ${process.cwd()}`);
   try {
-    process.chdir('../../../');
+    process.chdir('/opt/build/repo/node_modules/chromium/lib/chromium/chrome-linux/');
     console.log(`New directory: ${process.cwd()}`);
   } catch (err) {
     console.error(`chdir: ${err}`);
