@@ -40,7 +40,7 @@ exports.handler = async function (event, context) {
     headless: true,
   });
 
-  const page = await browser.pages();
+  const page = await browser.newPage();
   await page.evaluateOnNewDocument(evadr());
   await page.setViewport({
     width: width,
