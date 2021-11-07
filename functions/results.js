@@ -9,7 +9,8 @@ exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const height = requestBody.height;
   const width = requestBody.width;
-console.log(process.env)
+console.log(__dirname)
+console.log(process.cwd())
   const browser = await puppeteer.launch({
     executablePath: "/opt/build/repo/node_modules/chromium/lib/chromium/chrome-linux/chrome",
     headless: true,
