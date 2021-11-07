@@ -41,7 +41,7 @@ exports.handler = async function (event, context) {
   });
 
   const page = await browser.newPage();
-  await page.evaluateOnNewDocument(evadr());
+  await page.evaluateOnNewDocument(evadr);
   await page.setViewport({
     width: width,
     height: height,
