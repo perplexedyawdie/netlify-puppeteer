@@ -4,6 +4,7 @@ const chromium = require('chrome-aws-lambda');
 // const {addExtra } = require('puppeteer-extra');
 // const puppeteer = addExtra(chromium.puppeteer);
 // const puppeteer = addExtra(chromium.puppeteer);
+const puppeteerCloak = require('puppeteer-cloak');
 // puppeteer.use(StealthPlugin());
 exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
@@ -11,26 +12,19 @@ exports.handler = async function (event, context) {
   const width = requestBody.width;
   console.log(chromium.args)
   const browser = await chromium.puppeteer.launch({
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-infobars',
-      '--window-position=0,0',
-      '--ignore-certifcate-errors',
-      '--ignore-certifcate-errors-spki-list',
-      '--user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3312.0 Safari/537.36"'],
     executablePath: await chromium.executablePath,
     headless: true,
   });
 
-  const page = await browser.newPage();
-  await page.setViewport({
+  const page = (await browser.pages())[0];
+  const cloakedPage = puppeteerCloak(page);
+  await cloakedPage.setViewport({
     width: width,
     height: height,
     deviceScaleFactor: 1,
   });
-  await page.goto('https://opensea.io/neverexposed');
-  const pageHeight = await page.evaluate(() => {
+  await cloakedPage.goto('https://opensea.io/neverexposed');
+  const pageHeight = await cloakedPage.evaluate(() => {
     let body = document.body,
       html = document.documentElement;
 
