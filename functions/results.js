@@ -11,7 +11,7 @@ exports.handler = async function (event, context) {
   const width = requestBody.width;
 console.log(process.env)
   const browser = await puppeteer.launch({
-    executablePath: process.env.CHROME_PATH,
+    executablePath: "/opt/build/repo/node_modules/chromium/lib/chromium/chrome-linux/chrome",
     headless: true,
   });
 
